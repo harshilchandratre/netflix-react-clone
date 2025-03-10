@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #000;
+  color: #fff;
+
+  font-size: small;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: #c0c0c0;
+  }
+}
+
+// header css
+.Header {
+  background-color: #000;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 2px solid white;
+  gap: 50px;
+
+  > img {
+    height: 40%;
+    margin-left: 20px;
+  }
+
+  > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    list-style-type: none;
+
+    color: #fff;
+  }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+
+    gap: 40px;
+
+    margin-right: 20px;
+  }
+}
+
+.nav-search {
+    &:hover {
+        color: #c0c0c0;
+    }
+}
+
+// Home css
+.container {
+  padding: 0 20px;
+}
