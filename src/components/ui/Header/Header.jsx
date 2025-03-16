@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/netflix-logo.png";
+import logo from "../../../assets/netflix-logo.png";
 import { FiSearch } from "react-icons/fi";
 import { Link } from "react-router-dom";
 // import "./Header.scss";
