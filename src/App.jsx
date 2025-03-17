@@ -1,12 +1,13 @@
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/ui/Home/Home";
+import Home from "./components/ui/Home/index.jsx";
 import Header from "./components/ui/Header/Header";
-import TVseries from "./components/ui/TVSeries/tvseries";
-import Popular from "./components/ui/Popular/Popular";
-import Films from "./components/ui/Films/Films";
+import Popular from "./components/ui/Popular/index.jsx";
+import Films from "./components/ui/Films/index.jsx";
 import { useEffect, useState } from "react";
 import LoadingScreen from "./components/shared/LoadingScreen/LoadingScreen";
+import TVSeries from "./components/ui/TVSeries/index.jsx";
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,7 +30,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/tvseries" element={<TVseries />} />
+            <Route path="/tvseries" element={<TVSeries />} />
             <Route path="/films" element={<Films />} />
             <Route path="/popular" element={<Popular />} />
           </Routes>

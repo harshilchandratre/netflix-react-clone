@@ -11,7 +11,7 @@ const url = "https://api.themoviedb.org/3/tv/";
 
 // https://api.themoviedb.org/3/tv/popular?api_key=0c901f88f70749decde4a1ace1c27b56&language=en-US
 
-const TVseries = () => {    
+const TVSeries = () => {    
   const [popularTVResults, setPopularTVResults] = useState([]);
   const [topRatedTVResults, setTopRatedTVResults] = useState([]);
   const [airingTodayResults, setAiringTodayResults] = useState([]);
@@ -59,4 +59,4 @@ const TVseries = () => {
   );
 };
 
-export default TVseries;
+export default TVSeries;
