@@ -16,10 +16,12 @@ const Carousel = ({ movie }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     fade: true,
     waitForAnimate: false,
   };
+
+  
 
   return (
     <div className="carousel-main">
@@ -28,11 +30,11 @@ const Carousel = ({ movie }) => {
           <div key={movie.id} className="carousel-slide">
             <img
               src={`${imgUrl}${movie.backdrop_path}`}
-              alt={movie.title}
+              alt={movie.title || movie.name}
               className="carousel-image"
             />
             <div className="carousel-overlay">
-              <h2>{movie.title}</h2>
+              <h2>{movie.title || movie.name}</h2>
               <p>{movie.overview}</p>
               <div className="carousel-buttons">
                 <button>

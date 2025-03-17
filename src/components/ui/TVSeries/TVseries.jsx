@@ -7,13 +7,15 @@ import LoadingScreen from "../../shared/LoadingScreen/LoadingScreen";
 
 const apiKey =
   import.meta.env.VITE_API_KEY || "0c901f88f70749decde4a1ace1c27b56";
-const url = "https://api.themoviedb.org/3/movie/";
+const url = "https://api.themoviedb.org/3/tv/";
 
-const Home = () => {
-  const [popularResults, setPopularResults] = useState([]);
-  const [topRatedResults, setTopRatedResults] = useState([]);
-  const [nowPlayingResults, setNowPlayingResults] = useState([]);
-  const [upcomingResults, setUpcomingResults] = useState([]);
+// https://api.themoviedb.org/3/tv/popular?api_key=0c901f88f70749decde4a1ace1c27b56&language=en-US
+
+const TVseries = () => {    
+  const [popularTVResults, setPopularTVResults] = useState([]);
+  const [topRatedTVResults, setTopRatedTVResults] = useState([]);
+  const [airingTodayResults, setAiringTodayResults] = useState([]);
+  const [OnTheAirResults, setOnTheAirResults] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,31 +32,31 @@ const Home = () => {
       }
     };
 
-    const fetchAllMovies = async () => {
+    const fetchAllTVSeries = async () => {
       await Promise.all([
-        fetchMovies("popular", setPopularResults),
-        fetchMovies("top_rated", setTopRatedResults),
-        fetchMovies("now_playing", setNowPlayingResults),
-        fetchMovies("upcoming", setUpcomingResults),
+        fetchMovies("popular", setPopularTVResults),
+        fetchMovies("top_rated", setTopRatedTVResults),
+        fetchMovies("airing_today", setAiringTodayResults),
+        fetchMovies("on_the_air", setOnTheAirResults),
       ]);
 
       setLoading(false);
     };
 
-    fetchAllMovies();
+    fetchAllTVSeries();
   }, []);
 
   if (loading) return <LoadingScreen />;
 
   return (
     <div className="container">
-      {/* <Carousel movie={nowPlayingResults} /> */}
-      <Row title={"Now Playing"} results={nowPlayingResults} />
-      <Row title={"Popular"} results={popularResults} />
-      <Row title={"Top Rated"} results={topRatedResults} />
-      <Row title={"Upcoming"} results={upcomingResults} />
+      <Carousel movie={airingTodayResults} />   
+      <Row title={"Airing Today"} results={airingTodayResults} />
+      <Row title={"On The Air"} results={OnTheAirResults} />
+      <Row title={"Popular"} results={popularTVResults} />
+      <Row title={"Top Rated"} results={topRatedTVResults} />
     </div>
   );
 };
 
-export default Home;
+export default TVseries;
